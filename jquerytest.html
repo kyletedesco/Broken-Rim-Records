@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="robots" content="noindex, nofollow" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script type="text/javascript">
+/* This region of javascript is all that is required to use a singular trigger/toggle method on the next operator/element. Simply add classes to both your trigger and your next toggle and it will allow you to trigger the next element's visibility with anything in the HTML via click. This can be switched to hover for a mouseover effect but this may require more timing and styling considerations. */
+
+$(document).ready(function(){
+	$(".trigger").click(function(){
+		$(this).next(".toggle").slideToggle(1500);
+	}); /* end simple next element trigger */
+	
+/* This region is set up to allow individual assignments of classes located anywhere on the page. Due to this, you can set your triggers up on sidebars, images, or other locations even if they are not directly located next to the content you're looking to expose. This code would need to be changed for each site due to the variable classes. */
+
+	$(".triggerone").click(function(){
+		$(".one").slideToggle(1500);
+	});
+	$(".triggertwo").click(function(){
+		$(".two").slideToggle(1500);
+	});
+	$(".triggerthree").click(function(){
+		$(".three").slideToggle(1500);
+	});
+});
+</script>
+<style>
+@charset "UTF-8";
+/* CSS Document */
+
+html, body {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.container {
+	width: 1100px;
+	height: 800px;
+	background-color: #ccc;
+	margin: auto;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+.content {
+	width: 600px;
+	float: left;
+	text-align: justify;
+	padding: 20px 0 0 40px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+	
+}
+
+.content p {
+	font-weight: bold;
+	text-align: justify;
+}
+.content h2 {
+	margin: auto;
+	padding: 15px 0 10px 30px;
+}
+
+.content h2:hover {
+	color: #C60;
+}
+
+.toggle p {
+	text-align: center;
+	margin: auto;
+	padding: 10px 0 10px 0;
+	background-color: #fff;
+	font-weight: normal;
+}
+
+.toggle {
+	display: none;
+}
+
+.buttons {
+	width: 400px;
+	float: right;
+	text-align: center;
+	padding: 25px 0 0 0;
+	background-color: #ccc;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+
+.buttons h2 {
+	width: 400px;
+	padding: 25px 0 25px 0;
+	margin: 0;
+}
+
+.buttons h2:hover {
+	background-color: #09F;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="test.css" />
+<title>jquery seo test</title>
+
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="content">
+    	<h1>Want to Stuff some SEO Spam?</h1>
+        <h2 class="trigger">Click This First</h2>
+        <div class="toggle one">
+        <p>this left column is really, really easy to code with the template in the head here.</p>
+        <p>this code simply causes anything with the class "trigger" to "trigger" the next element with the class "toggle".</p>
+        <p>easy enough, right?</p>
+        </div>
+        <h2 class="trigger">Click This Guy Next</h2>
+        <div class="toggle two">
+        <p>the right sidebar is kind of annoying, but could be super useful.</p>
+        <p>the assignments are more difficult to code because you can't simply assign them to the next logical operator.</p>
+        <p>this would require a secondary class assigned to the toggle elements and a little more programming in the jquery controls.</p>
+        </div>
+        <h2 class="trigger">Even More Content</h2>
+        <div class="toggle three">
+        <p>fortunately, the first part is easily executable even by those not super familiar with javascript.</p>
+        <p>I'd just like to work on figuring out how to responsively expand the container for sites with more static layouts.</p>
+        </div>
+        <div>
+        <p>Just some extra content being normally crawled down here.</p>
+        </div>
+    </div>
+	<div class="buttons">
+	<h2 class="triggerone">the thing</h2>
+    <h2 class="triggertwo">the second thing</h2>
+    <h2 class="triggerthree">the third thing</h2>
+    </div>
+</div>
+
+</body>
+</html>

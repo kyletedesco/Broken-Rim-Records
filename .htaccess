@@ -1,0 +1,19 @@
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine On
+RewriteCond %{REQUEST_URI} /index\.html?$ [NC]
+RewriteRule ^(.*)index\.html?$ "/$1" [NC,R=301,NE,L]
+RewriteCond %{HTTP_HOST} !^www\.brokenrimrecords\.com$ [NC]
+RewriteRule ^(.*)$ "http://www.brokenrimrecords.com/$1" [R=301,NE,L]
+Redirect 301 /news.html http://www.brokenrimrecords.com/
+Redirect 301 /content/events.html http://www.brokenrimrecords.com/events.html
+Redirect 301 /content/bands.html http://www.brokenrimrecords.com/bands.html
+Redirect 301 /content/about.html http://www.brokenrimrecords.com/about.html
+Redirect 301 /content/faq.html http://www.brokenrimrecords.com/faq.html
+Redirect 301 /content/contact.html http://www.brokenrimrecords.com/contact.html
+Redirect 301 /content/news.html http://www.brokenrimrecords.com/news.html
+Redirect 301 /content/releases.html http://www.brokenrimrecords.com/releases.html
+Redirect 301 /content/links.html http://www.brokenrimrecords.com/links.html
+Redirect 301 /store http://store.brokenrimrecords.com/
+  
+ErrorDocument 404 /404.html
